@@ -1,0 +1,49 @@
+{
+    "name": "webpack-with-reactjs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "rm -rf .husky && husky install && npx husky add .husky/pre-commit \"npx lint-staged\"",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "webpack serve --config webpack/webpack.dev.js --hot",
+        "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
+        "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\""
+    },
+    "lint-staged": {
+        "*.+(js|jsx|ts|tsx|json|css|md)": "prettier --write --ignore-unknow"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@svgr/webpack": "^6.1.2",
+        "@types/react": "^17.0.37",
+        "@types/react-dom": "^17.0.11",
+        "css-loader": "^6.5.1",
+        "dotenv": "^10.0.0",
+        "dotenv-expand": "^5.1.0",
+        "html-loader": "^3.0.1",
+        "html-webpack-plugin": "^5.5.0",
+        "husky": "^7.0.4",
+        "import-glob": "^1.5.0",
+        "lint-staged": "^12.1.2",
+        "lodash-webpack-plugin": "^0.11.6",
+        "node-sass": "^7.0.0",
+        "onchange": "^7.1.0",
+        "prettier": "^2.5.1",
+        "react-dev-utils": "^11.0.4",
+        "sass-loader": "^12.4.0",
+        "style-loader": "^3.3.1",
+        "ts-loader": "^9.2.6",
+        "webpack": "^5.65.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.6.0",
+        "webpack-manifest-plugin": "^4.0.2",
+        "webpack-merge": "^5.8.0"
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    }
+}
