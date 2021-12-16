@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '@/components/button'
 import Banner from '@/static/images/banner.png'
 import Github from '@/static/icons/github.svg'
+// import { a } from '@/utils/test'
 
 import '@/styles/App.scss'
 
@@ -9,6 +10,7 @@ const App: React.FC = () => {
     const onFocus = () => {}
 
     const onBlur = () => {}
+
     return (
         <React.Fragment>
             <Button danger>My Button</Button>

@@ -12,7 +12,7 @@
         "lint": "eslint ."
     },
     "lint-staged": {
-        "*.+(js|jsx|ts|tsx)": "eslint --max-warnings 0 --fix-dry-run",
+        "*.+(js|jsx|ts|tsx)": "eslint --max-warnings 0 --fix",
         "*.+(js|jsx|ts|tsx|json|css|md)": "prettier --write --ignore-unknow"
     },
     "keywords": [],
@@ -34,6 +34,7 @@
         "eslint": "^7.32.0",
         "eslint-loader": "^4.0.2",
         "eslint-plugin-react": "^7.27.1",
+        "eslint-plugin-react-hooks": "^4.3.0",
         "html-loader": "^3.0.1",
         "html-webpack-plugin": "^5.5.0",
         "husky": "^7.0.4",

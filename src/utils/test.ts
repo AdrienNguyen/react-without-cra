@@ -1,2 +1,1 @@
-const a: string = 'Nguyen Anh Phuong'
-export default a
+export const a: string = 'Nguyen Anh Phuong'
