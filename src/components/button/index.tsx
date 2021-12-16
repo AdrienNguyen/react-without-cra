@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import './style.css'
 
 interface IBtnProps {
     primary?: boolean

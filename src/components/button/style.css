@@ -20,26 +20,5 @@
     border-radius: 8px;
     overflow: hidden;
     transform: translateX(0);
-}
-
-.btn-primary {
-    background: $primary-color;
-    color: white;
-    // box-shadow: 0 6px 30px -10px rgba($primary-color, 1);
-}
-
-.btn-danger {
-    color: #fff;
-    background: $error-color;
-    // box-shadow: 0 6px 30px -10px rgba($error-color, 1);
-}
-
-.btn-warning {
-    color: #fff;
-    background: $warning-color;
-    // box-shadow: 0 6px 30px -10px rgba($warning-color, 1);
-}
-
-.colonho {
-    background: red;
+    background-color: green !important;
 }
