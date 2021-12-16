@@ -12,6 +12,10 @@ const { appIndexJs, publicUrlOrPath, appBuild, esLintFile } = paths
 const getClientEnviroment = require(`${configPath}/env`)
 const env = getClientEnviroment(publicUrlOrPath)
 
+const imageInlineSizeLimit = parseInt(
+    process.env.IMAGE_INLINE_SIZE_LIMIT || '10000',
+)
+
 module.exports = {
     entry: appIndexJs,
     module: {
@@ -36,11 +40,25 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
+                loader: 'file-loader',
+                options: {
+                    name: 'static/media/[name].[hash:8].[ext]',
+                },
             },
             {
-                test: /\.(png|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
+                test: [
+                    /\.bmp$/,
+                    /\.gif$/,
+                    /\.jpe?g$/,
+                    /\.png$/,
+                    /\.jpg$/,
+                    /\.gif$/,
+                ],
+                loader: 'url-loader',
+                options: {
+                    limit: imageInlineSizeLimit,
+                    name: 'static/media/[name].[hash:8].[ext]',
+                },
             },
             {
                 test: /\.svg$/,

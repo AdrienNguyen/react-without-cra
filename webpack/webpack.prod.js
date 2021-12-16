@@ -1,8 +1,8 @@
 process.env.NODE_ENV = 'production'
-const path = require('path')
+// const path = require('path')
 const { default: merge } = require('webpack-merge')
 const common = require('./webpack.common')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -11,7 +11,8 @@ const HtmlMinimizerPlugin = require('html-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
-const { appPublic, appBuild, appHtml } = require('../config/paths')
+// const { appPublic, appBuild, appHtml } = require('../config/paths')
+const { appHtml } = require('../config/paths')
 
 module.exports = merge(common, {
     mode: 'production',
@@ -25,15 +26,15 @@ module.exports = merge(common, {
         ],
     },
     plugins: [
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(appPublic, 'static'),
-                    to: path.resolve(appBuild, 'static'),
-                    toType: 'dir',
-                },
-            ],
-        }),
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //         {
+        //             from: path.resolve(appPublic, 'static'),
+        //             to: path.resolve(appBuild, 'static'),
+        //             toType: 'dir',
+        //         },
+        //     ],
+        // }),
         new MiniCssExtractPlugin({
             filename: 'static/css/[name].[contenthash:8].css',
             chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
@@ -74,6 +75,12 @@ module.exports = merge(common, {
                     reuseExistingChunk: true,
                 },
             },
+        },
+        // Keep the runtime chunk separated to enable long term caching
+        // https://twitter.com/wSokra/status/969679223278505985
+        // https://github.com/facebook/create-react-app/issues/5358
+        runtimeChunk: {
+            name: (entrypoint) => `runtime-${entrypoint.name}`,
         },
         minimizer: [
             // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
@@ -117,7 +124,6 @@ module.exports = merge(common, {
                         ascii_only: true,
                     },
                 },
-                extractComments: false,
             }),
             new CssMinimizerPlugin(),
             new ImageminWebpack({
