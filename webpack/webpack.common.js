@@ -7,7 +7,7 @@ const webpack = require('webpack')
 
 const configPath = '../config'
 const paths = require(`${configPath}/paths`)
-const { appIndexJs, publicUrlOrPath, appBuild } = paths
+const { appIndexJs, publicUrlOrPath, appBuild, esLintFile } = paths
 
 const getClientEnviroment = require(`${configPath}/env`)
 const env = getClientEnviroment(publicUrlOrPath)
@@ -55,6 +55,15 @@ module.exports = {
                 exclude: [/node_modules/],
                 use: {
                     loader: 'babel-loader',
+                },
+            },
+            {
+                enforce: 'pre',
+                test: /\.(js|jsx|ts|tsx)$/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader',
+                options: {
+                    configFile: esLintFile,
                 },
             },
         ],

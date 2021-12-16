@@ -6,6 +6,9 @@ import Github from '@/static/icons/github.svg'
 import '@/styles/App.scss'
 
 const App: React.FC = () => {
+    const onFocus = () => {}
+
+    const onBlur = () => {}
     return (
         <React.Fragment>
             <Button danger>My Button</Button>
@@ -13,6 +16,13 @@ const App: React.FC = () => {
             <h2>This is second time</h2>
             <img className="banner" src={Banner} />
             <Github />
+            <input
+                className="phuongna"
+                type="text"
+                id="input-1"
+                onFocus={onFocus}
+                onBlur={onBlur}
+            />
         </React.Fragment>
     )
 }

@@ -8,9 +8,11 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "webpack serve --config webpack/webpack.dev.js --hot",
         "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
-        "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\""
+        "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
+        "lint": "eslint ."
     },
     "lint-staged": {
+        "*.+(js|jsx|ts|tsx)": "eslint --max-warnings 0 --fix-dry-run",
         "*.+(js|jsx|ts|tsx|json|css|md)": "prettier --write --ignore-unknow"
     },
     "keywords": [],
@@ -23,10 +25,15 @@
         "@svgr/webpack": "^6.1.2",
         "@types/react": "^17.0.37",
         "@types/react-dom": "^17.0.11",
+        "@typescript-eslint/eslint-plugin": "^5.7.0",
+        "@typescript-eslint/parser": "^5.7.0",
         "babel-loader": "^8.2.3",
         "css-loader": "^6.5.1",
         "dotenv": "^10.0.0",
         "dotenv-expand": "^5.1.0",
+        "eslint": "^7.32.0",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-react": "^7.27.1",
         "html-loader": "^3.0.1",
         "html-webpack-plugin": "^5.5.0",
         "husky": "^7.0.4",

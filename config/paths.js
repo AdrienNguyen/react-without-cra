@@ -17,4 +17,5 @@ module.exports = {
     publicUrlOrPath,
     appPackageJson: resolveApp('package.json'),
     dotenv: resolveApp('.env'),
+    esLintFile: resolveApp('.eslintrc.js'),
 }
