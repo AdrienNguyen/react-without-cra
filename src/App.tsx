@@ -1,9 +1,7 @@
 import React from 'react'
 import Button from '@/components/button'
-import Banner from '@/static/images/banner.png'
 import Github from '@/static/icons/github.svg'
-// import { a } from '@/utils/test'
-
+import Banner from '@/static/images/banner.png'
 import '@/styles/App.scss'
 
 const App: React.FC = () => {

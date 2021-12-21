@@ -18,4 +18,5 @@ module.exports = {
     appPackageJson: resolveApp('package.json'),
     dotenv: resolveApp('.env'),
     esLintFile: resolveApp('.eslintrc.js'),
+    testsSetup: resolveApp('src/setupTests.ts'),
 }

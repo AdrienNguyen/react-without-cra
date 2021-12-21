@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <App /> without crashing 1`] = `
+<React.Fragment>
+  <Button
+    danger={true}
+  >
+    My Button
+  </Button>
+  <h1>
+    This is the first time
+  </h1>
+  <h2>
+    This is second time
+  </h2>
+  <img
+    className="banner"
+    src={
+      Object {
+        "process": [Function],
+      }
+    }
+  />
+  <SvgrURL />
+  <input
+    className="phuongna"
+    id="input-1"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    type="text"
+  />
+</React.Fragment>
+`;

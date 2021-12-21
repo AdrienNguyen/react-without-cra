@@ -17,3 +17,5 @@ declare module '*.json' {
     const content: any
     export default content
 }
+
+// declare module 'enzyme-adapter-react-16'
