@@ -9,12 +9,23 @@ import { Router, Switch } from 'wouter'
 import PublicRoute from '@/routes/PublicRoute'
 import PrivateRoute from '@/routes/PrivateRoute'
 
-const AdminHome = lazy(() => import('@/modules/admin/containers/AdminHome'))
-const Login = lazy(() => import('@/modules/auth/containers/login'))
-const Register = lazy(() => import('@/modules/auth/containers/register'))
-const ClientHome = lazy(() => import('@/modules/client/containers/ClientHome'))
-const About = lazy(() => import('@/modules/client/containers/About'))
-const NotFound = lazy(() => import('@/components/not-found'))
+const Components: any = {
+    AdminHome: lazy(() => import('@/modules/admin/containers/AdminHome')),
+    Login: lazy(() => import('@/modules/auth/containers/login')),
+    Register: lazy(() => import('@/modules/auth/containers/register')),
+    ClientHome: lazy(() => import('@/modules/client/containers/ClientHome')),
+    About: lazy(() => import('@/modules/client/containers/About')),
+    NotFound: lazy(() => import('@/components/not-found')),
+}
+
+const LazyCompoent = ({ component = 'NotFound', ...props }) => {
+    const View = Components[component] || Components['NotFound']
+    return (
+        <Suspense fallback={<PageLoading />}>
+            <View {...props} />
+        </Suspense>
+    )
+}
 
 const Routes: React.FC = () => {
     return (
@@ -26,41 +37,43 @@ const Routes: React.FC = () => {
                         path="/login"
                         header={false}
                         footer={false}
-                        component={Login}
+                        component={() => <LazyCompoent component="Login" />}
                     />
                     <PublicRoute
                         exact
                         path="/register"
                         header={false}
                         footer={false}
-                        component={Register}
+                        component={() => <LazyCompoent component="register" />}
                     />
                     <PublicRoute
                         exact
                         path="/"
                         header={<ClientHeader />}
                         footer={<ClientFooter />}
-                        component={ClientHome}
+                        component={() => (
+                            <LazyCompoent component="ClientHome" />
+                        )}
                     />
                     <PublicRoute
                         exact
                         path="/about"
                         header={<ClientHeader />}
                         footer={<ClientFooter />}
-                        component={About}
+                        component={() => <LazyCompoent component="About" />}
                     />
                     <PrivateRoute
                         exact
                         path="/admin"
                         header={<AdminHeader />}
                         footer={<AdminFooter />}
-                        component={AdminHome}
+                        component={() => <LazyCompoent component="AdminHome" />}
                     />
                     <PublicRoute
                         path="/:rest*"
                         header={false}
                         footer={false}
-                        component={NotFound}
+                        component={() => <LazyCompoent component="NotFound" />}
                     />
                 </Switch>
             </Router>
