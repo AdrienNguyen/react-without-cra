@@ -32,6 +32,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'warn',
         'no-useless-escape': 'off',
+        'no-extra-boolean-cast': 'off',
         // I dont know. I use any :)
         '@typescript-eslint/no-explicit-any': ['off', { ignoreRestArgs: true }],
         '@typescript-eslint/no-empty-function': 'off',

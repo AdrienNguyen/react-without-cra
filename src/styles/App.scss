@@ -1,11 +1,12 @@
-@import 'color';
-@import 'container';
-@import 'font';
+@import 'variables';
+@import 'animations';
+@import 'base';
+@import 'functions';
+@import 'grid';
+@import 'mixins';
 @import 'typography';
-@import 'mixin';
-@import 'reset';
-@import 'size';
-@import 'typography';
-@import 'utils';
+@import 'utilities';
 
 @import '../components/**/*.scss';
+@import '../layouts/**/*.scss';
+@import '../modules/**/**/*.scss';

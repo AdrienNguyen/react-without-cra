@@ -1,0 +1,16 @@
+.client-header {
+    height: 8rem;
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    & ul {
+        display: flex;
+        margin-left: 10rem;
+        list-style: none;
+        justify-content: space-between;
+        width: 10rem;
+        & li > a {
+            text-decoration: none;
+        }
+    }
+}
