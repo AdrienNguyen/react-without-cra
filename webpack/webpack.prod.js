@@ -108,6 +108,7 @@ module.exports = merge(common, {
                         // Pending further investigation:
                         // https://github.com/terser-js/terser/issues/120
                         inline: 2,
+                        drop_console: true,
                     },
                     mangle: {
                         safari10: true,

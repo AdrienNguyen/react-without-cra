@@ -4,18 +4,46 @@ import AdminFooter from '@/layouts/footer/admin-footer'
 import AdminHeader from '@/layouts/header/admin-header'
 import ClientFooter from '@/layouts/footer/client-footer'
 import ClientHeader from '@/layouts/header/client-header'
-import { PageLoading } from '@/components'
+import { PageLoading } from '@/common-components'
 import { Router, Switch } from 'wouter'
 import PublicRoute from '@/routes/PublicRoute'
 import PrivateRoute from '@/routes/PrivateRoute'
 
 const Components: any = {
-    AdminHome: lazy(() => import('@/modules/admin/containers/AdminHome')),
-    Login: lazy(() => import('@/modules/auth/containers/login')),
-    Register: lazy(() => import('@/modules/auth/containers/register')),
-    ClientHome: lazy(() => import('@/modules/client/containers/ClientHome')),
-    About: lazy(() => import('@/modules/client/containers/About')),
-    NotFound: lazy(() => import('@/components/not-found')),
+    AdminHome: lazy(
+        () =>
+            import(
+                /* webpackPrefetch: true */ '@/modules/admin/containers/AdminHome'
+            ),
+    ),
+    Login: lazy(
+        () =>
+            import(
+                /* webpackPrefetch: true */ '@/modules/auth/containers/login'
+            ),
+    ),
+    Register: lazy(
+        () =>
+            import(
+                /* webpackPrefetch: true */ '@/modules/auth/containers/register'
+            ),
+    ),
+    ClientHome: lazy(
+        () =>
+            import(
+                /* webpackPrefetch: true */ '@/modules/client/containers/ClientHome'
+            ),
+    ),
+    About: lazy(
+        () =>
+            import(
+                /* webpackPrefetch: true */ '@/modules/client/containers/About'
+            ),
+    ),
+    NotFound: lazy(
+        () =>
+            import(/* webpackPrefetch: true */ '@/common-components/not-found'),
+    ),
 }
 
 const LazyCompoent = ({ component = 'NotFound', ...props }) => {

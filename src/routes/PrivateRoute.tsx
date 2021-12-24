@@ -1,4 +1,4 @@
-import NotFound from '@/components/not-found'
+import NotFound from '@/common-components/not-found'
 import Layout from '@/layouts'
 import React from 'react'
 import { Route } from 'wouter'

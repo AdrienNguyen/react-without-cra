@@ -33,6 +33,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'warn',
         'no-useless-escape': 'off',
         'no-extra-boolean-cast': 'off',
+        eqeqeq: ['warn', 'always'],
         // I dont know. I use any :)
         '@typescript-eslint/no-explicit-any': ['off', { ignoreRestArgs: true }],
         '@typescript-eslint/no-empty-function': 'off',
