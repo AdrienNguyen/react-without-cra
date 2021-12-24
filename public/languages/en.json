@@ -1,7 +1,10 @@
 {
-    "COMMON": {
+    "CLIENT": {
         "NAME": "This is home client page",
         "HOME": "Home",
         "ABOUT": "About"
+    },
+    "ADMIN": {
+        "NAME_ADMIN": "This is home admin page"
     }
 }

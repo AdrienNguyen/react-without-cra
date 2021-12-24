@@ -1,8 +1,14 @@
 import React from 'react'
+import Banner from '@p/static/images/banner.png'
+import { t } from '@/locales'
 
 const ClientHome: React.FC = () => {
-    console.log('Tao render lai nay')
-    return <h1>This is home client page</h1>
+    return (
+        <>
+            <h1>{t('NAME')}</h1>
+            <img src={Banner} alt="banner" />
+        </>
+    )
 }
 
 export default ClientHome

@@ -18,7 +18,7 @@ const config = {
             '<rootDir>/config/jest/assetsTransformer.js',
         '\\.svg$': '<rootDir>/config/jest/svgrMock.js',
         '^.+\\.(css|less|scss)$': '<rootDir>/config/jest/cssMock.js',
-        '^@/static/(.*)$': '<rootDir>/public/static/$1',
+        '^@p/(.*)$': '<rootDir>/public/static/$1',
         '^@/(.*)$': '<rootDir>/src/$1',
     },
 }

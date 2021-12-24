@@ -1,17 +1,12 @@
-import { LANGUAGE_CHANGE } from '@/common-states/language/actions'
+import { t } from '@/locales'
+import { useUpdateLocale } from '@/locales/context'
 import React, { ChangeEvent } from 'react'
-import { useDispatch } from 'react-redux'
 import { Link } from 'wouter'
 
 const ChooseLanguage = () => {
-    const dispatch = useDispatch()
+    const updateLocale = useUpdateLocale()
     const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-        dispatch({
-            type: LANGUAGE_CHANGE,
-            payload: {
-                locale: e.target.value,
-            },
-        })
+        updateLocale(e.target.value)
     }
     return (
         <>
@@ -28,10 +23,10 @@ const ClientHeader: React.FC = () => {
         <header className="client-header">
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">{t('HOME')}</Link>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about">{t('ABOUT')}</Link>
                 </li>
                 <li>
                     <ChooseLanguage />

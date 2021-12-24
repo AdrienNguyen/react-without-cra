@@ -13,7 +13,7 @@
         "baseUrl": ".",
         "typeRoots": ["config/@types", "node_modules/@types"],
         "paths": {
-            "@/static/*": ["public/static/*"],
+            "@p/*": ["public/static/*"],
             "@/*": ["src/*"]
         }
     },
