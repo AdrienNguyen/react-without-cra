@@ -2,7 +2,8 @@
     "CLIENT": {
         "NAME": "Đây là trang chủ phía khách",
         "HOME": "Trang chủ",
-        "ABOUT": "Về chúng tôi"
+        "ABOUT": "Về chúng tôi",
+        "FOOTER": "Đây là footer phía client"
     },
     "ADMIN": {
         "NAME_ADMIN": "Đây là trang chủ phía quản trị"

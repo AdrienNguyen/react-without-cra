@@ -2,7 +2,8 @@
     "CLIENT": {
         "NAME": "This is home client page",
         "HOME": "Home",
-        "ABOUT": "About"
+        "ABOUT": "About",
+        "FOOTER": "This is client footer"
     },
     "ADMIN": {
         "NAME_ADMIN": "This is home admin page"
